@@ -1,6 +1,6 @@
 <h1>Mailing</h1>
 
-<% form_tag(mailings_path, :multipart => true) do %>
+<% form_tag(mailings_path(:format => "pdf"), :multipart => true) do %>
   <%= file_field_tag :payments %>
   <%= submit_tag "Create labels!" %>
 <% end -%>

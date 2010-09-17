@@ -1,0 +1,36 @@
+body {
+   margin-left: 5mm;
+   margin-right: 5mm;
+   margin-top: 10mm;
+   margin-bottom: 10mm;
+}
+
+#labels {
+  width: 200mm;
+  padding: 0mm;
+  clear: left;
+  border: 1px solid black !important;
+  border-collapse:collapse;
+}
+
+.label {
+  border: 1px solid black !important;
+  height: 38mm;
+  min-height: 38mm;
+  padding-left:3mm;
+  padding-right:3mm;
+  text-align: center;
+}
+
+  .label p {
+    margin: 1mm;
+    font-size: 14pt;
+  }
+
+  .label p.zipcode {
+    font-size: 16pt;
+  }
+  
+  .label .zipcode {
+    font-weight: bold;
+  }
