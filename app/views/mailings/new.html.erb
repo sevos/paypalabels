@@ -2,5 +2,7 @@
 
 <% form_tag(mailings_path(:format => "pdf"), :multipart => true) do %>
   <%= file_field_tag :payments %>
+  <%= label_tag :skip, "Skip X first label slots" %><br/>
+  <%= text_field_tag :skip, 0 %><br/>
   <%= submit_tag "Create labels!" %>
 <% end -%>
