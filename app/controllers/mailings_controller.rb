@@ -11,4 +11,7 @@ class MailingsController < ApplicationController
     end
   end
 
+  def summary
+    @contacts = Mailing.new(params[:payments].read).contacts
+  end
 end

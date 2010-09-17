@@ -1,5 +1,9 @@
 Paypalabels::Application.routes.draw do
-  resources :mailings
+  resources :mailings do
+    collection do
+      post "summary"
+    end
+  end
 
   root :to => "mailings#new"
   # The priority is based upon order of creation:

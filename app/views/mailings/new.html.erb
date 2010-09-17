@@ -6,3 +6,8 @@
   <%= text_field_tag :skip, 0 %><br/>
   <%= submit_tag "Create labels!" %>
 <% end -%>
+<h1>Summary</h1>
+<% form_tag(summary_mailings_path, :multipart => true) do %>
+  <%= file_field_tag :payments %>
+  <%= submit_tag "Show summary" %>
+<% end -%>
