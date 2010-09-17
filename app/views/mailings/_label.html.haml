@@ -1,0 +1,10 @@
+.label
+  %p.name= contact.name
+  %p.address
+    = contact.address_1
+    - if contact.address_2.present?
+      %br/
+      = contact.address_2
+  %p== #{contact.city}, #{contact.state}
+  %p.zipcode= contact.zipcode
+  %p.country= contact.country
