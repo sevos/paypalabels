@@ -1,4 +1,7 @@
 Paypalabels::Application.routes.draw do
+  resources :mailings
+
+  root :to => "mailings#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
