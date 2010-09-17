@@ -2,7 +2,7 @@
   <% @contacts.in_groups_of(2).each do |contact1, contact2| %>
     <tr>
       <%= render :partial => "label", :locals => {:contact => contact1} %>
-      <%= render :partial => "label", :locals => {:contact => contact1} %>
+      <%= render :partial => "label", :locals => {:contact => contact2} %>
     </tr>
   <% end %>
 </end>
