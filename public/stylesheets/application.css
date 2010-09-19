@@ -86,3 +86,10 @@ body {
   color: red;
   font-weight: bold;
 }
+
+#summary .item-title {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  background-color: blue;
+}

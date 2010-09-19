@@ -1,25 +1,24 @@
-%table#summary
-  %tr
-    %th Name
-    %th Item title
-    %th Value paid
-    %th Postage
-    %th Note
-  - @contacts.each do |contact|
-    %tr{:class => html_class_for(contact)}
-      %td= contact.name
-      %td= contact.item_title
-      %td= contact.value
-      %td= contact.postage_price
-      %td= contact.note
-
-%table#summary
-  %tr
-    %th Standard postage
-    %td= @normal_postage_count
-  %tr
-    %th Special postage
-    %td= @special_postage_count
-  %tr
-    %th TOTAL
-    %td= @contacts.count
+- @contacts.each do |item_name, purchases|
+  %table#summary
+    %tr
+      %th.item-title{:colspan => 4}= item_name
+    %tr
+      %th{:colspan => 2} Standard postage count
+      %td{:colspan => 2}= purchases.select {|c| c.postage_price.zero? }.count
+    %tr
+      %th{:colspan => 2} Special postage count
+      %td{:colspan => 2}= purchases.reject {|c| c.postage_price.zero? }.count
+    %tr
+      %th{:colspan => 2} TOTAL
+      %td{:colspan => 2}= purchases.count
+    %tr
+      %th Name
+      %th Value paid
+      %th Postage
+      %th Note
+    - purchases.sort_by(&:value).reverse.each do |contact|
+      %tr{:class => html_class_for(contact)}
+        %td= contact.name
+        %td= number_to_currency contact.value
+        %td= number_to_currency contact.postage_price
+        %td= contact.note

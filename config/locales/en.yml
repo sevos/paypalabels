@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+  number:
+    currency:
+      format:
+        unit: '£'
+        format: '%u%n'

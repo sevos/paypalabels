@@ -14,4 +14,12 @@ module FieldFixings
       end
     end
   end
+
+  def floated(*getter_method_names)
+    getter_method_names.each do |getter|
+      define_method getter.to_sym do
+        instance_variable_get("@#{getter}").to_f
+      end
+    end
+  end
 end

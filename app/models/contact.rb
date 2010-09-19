@@ -10,6 +10,7 @@ class Contact
 
   camel_case :name, :address_1, :address_2, :country, :city, :state
   upper_case :zipcode
+  floated :postage_price, :value
 
   def initialize(csv_row)
     FIELDS.each do |field|
