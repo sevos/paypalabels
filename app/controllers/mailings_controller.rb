@@ -13,5 +13,8 @@ class MailingsController < ApplicationController
 
   def summary
     @contacts = Mailing.new(params[:payments].read).contacts
+
+    @normal_postage_count = @contacts.select {|c| c.postage_price.to_f > 0.00 }.count
+    @special_postage_count = @contacts.select {|c| c.postage_price.to_f == 0.00 }.count
   end
 end

@@ -54,3 +54,35 @@ body {
   .label .zipcode {
     font-weight: bold;
   }
+
+#summary {
+  border-collapse: collapse;
+  border: 1px solid blue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 900px;
+}
+
+#summary th {
+  background-color: #c6d5ea;
+  border: 1px solid blue;
+}
+
+#summary .even {
+  background-color: silver;
+}
+
+#summary td {
+  border-bottom: 1px solid blue;
+}
+
+#summary .special-postage td {
+  color: red;
+  font-weight: bold;
+}
+
+#summary .noted td {
+  color: red;
+  font-weight: bold;
+}

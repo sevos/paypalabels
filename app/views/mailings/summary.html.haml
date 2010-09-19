@@ -1,5 +1,25 @@
-#summary
-  %table
-    %tr
-      %th Buyer ID
-      %th 
+%table#summary
+  %tr
+    %th Name
+    %th Item title
+    %th Value paid
+    %th Postage
+    %th Note
+  - @contacts.each do |contact|
+    %tr{:class => html_class_for(contact)}
+      %td= contact.name
+      %td= contact.item_title
+      %td= contact.value
+      %td= contact.postage_price
+      %td= contact.note
+
+%table#summary
+  %tr
+    %th Standard postage
+    %td= @normal_postage_count
+  %tr
+    %th Special postage
+    %td= @special_postage_count
+  %tr
+    %th TOTAL
+    %td= @contacts.count
